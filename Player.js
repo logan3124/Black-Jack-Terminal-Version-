@@ -1,5 +1,8 @@
-const {deck} = require('./Card.js')
+const {Card, blackJackDeck} = require('./Card.js')
 
+
+//Parent class Player that has properties that the children classes blackJackPlayer and blackJackDealer will inherit
+//Has three properties (name, hand, and handValue)
 class Player {
     constructor(name) {
         this._name = name
@@ -11,8 +14,21 @@ class Player {
         return this._name
     }
 
+    get hand() {
+        return this._hand
+    }
+
     get handValue() {
         return this._handValue
+    }
+
+    set handValue(value) {
+        this._handValue = value
+    }
+
+    reset() {
+        this._hand = []
+        this._handValue = 0
     }
 
     addCard(card) {
@@ -20,6 +36,7 @@ class Player {
         this._handValue += card.value
     }
 
+    //Uses loops and the .show() property of the card class to log the cards side by side to the console
     showHand() {
         for (let i = 0; i < 7; i++) {
             let line = ''
@@ -31,7 +48,7 @@ class Player {
     }
 }
 
-class Human extends Player {
+class blackJackPlayer extends Player {
     constructor(name) {
         super(name)
         this._funds = 500
@@ -44,17 +61,26 @@ class Human extends Player {
     addFunds(amount) {
         this._funds += amount
     }
+
+    removeFunds(amount) {
+        this._funds -= amount
+    }
+
+    showOverview() {
+        let length = ('' + this._name + this._handValue + this._funds).length
+        console.log(`┌────────────────────────────────${'─'.repeat(length)}┐\n│ Name: ${this._name}  Hand-Total: ${this._handValue} Balance: ${this._funds} │\n└────────────────────────────────${'─'.repeat(length)}┘`)
+    }
 }
 
 
-class Dealer extends Player {
+class blackJackDealer extends Player {
     constructor(name) {
         super(name)
-        this._deck = deck
+        this._deck = blackJackDeck.slice(0)
     }
 
     resetDeck() {
-        this._deck = deck
+        this._deck = blackJackDeck.slice(0)
     }
 
     shuffleDeck() {
@@ -65,9 +91,28 @@ class Dealer extends Player {
         this._deck = newDeck
     }
 
+    showHandCover() {
+        for (let i = 0; i < 7; i++) {
+            let line = ''
+            line += this._hand[0].hide()[i] + ''
+            for (let j = 1; j < this._hand.length; j++) {
+                line += this._hand[j].show()[i] + ' '
+            }
+            console.log(line)
+        }
+    }
+
     deal() {
         return this._deck.shift()
     }
+
+    showOverview(showValue) {
+        if (showValue) {
+            console.log(`┌──────────────────────────────┐\n│ Name: ${this._name}  Hand-Total: ${this._handValue} │\n└──────────────────────────────┘`)
+        } else {
+            console.log(`┌─────────────────────────────┐\n│ Name: ${this._name}  Hand-Total: ? │\n└─────────────────────────────┘`)
+        }
+    }
 }
 
-export {Human, Dealer}
+module.exports = {blackJackPlayer, blackJackDealer}

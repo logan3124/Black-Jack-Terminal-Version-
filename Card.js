@@ -1,3 +1,7 @@
+
+//Card class that will represent each individual card in the deck
+//Three properties (suit, rank, and value)
+//Values of cards follow Black Jack rules where number cards are thier corresponding number, face cards are ten, and ace can be either eleven or 1 but starts with a value of 11
 class Card {
     constructor(suit, rank) {
         this._suit = suit
@@ -23,6 +27,8 @@ class Card {
         return this._value
     }
 
+    //Returns a visual representation of the card in the form of an array
+    //Returns array instead of string so that mulitple cards can be displayed beside each other later on
     show() {
         switch (this._suit) {
             case 'hearts':
@@ -56,6 +62,7 @@ class Card {
         
     }
 
+    //Returns a visual representation of a card that is facedown as an array
     hide() {
         return ['┌───────┐','│░░░░░░░│','│░░░░░░░│','│░░░░░░░│','│░░░░░░░│','│░░░░░░░│','└───────┘']
     }
@@ -63,19 +70,20 @@ class Card {
 
 }
 
-const deck = []
+const blackJackDeck = []
 
+//Loops below creates a deck 52 cards for a game of Black Jack
 
 for (let i = 2; i < 11; i++) {
     ['hearts', 'diamonds', 'spades', 'clubs'].forEach(suit => {
-        deck.push(new Card(suit, i))
+        blackJackDeck.push(new Card(suit, i))
     })
 }
 
 ['J', 'Q', 'K', 'A'].forEach(rank => {
     ['hearts', 'diamonds', 'spades', 'clubs'].forEach(suit => {
-        deck.push(new Card(suit, rank))
+        blackJackDeck.push(new Card(suit, rank))
     })
 })
 
-module.exports = {deck}
+module.exports = {Card, blackJackDeck}
