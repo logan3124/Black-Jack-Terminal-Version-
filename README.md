@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>Black Jack (Terminal Version)</h1>
+  <h1>♠ ♥ Black Jack (Terminal Version) ♣ ♦</h1>
   <strong>Developed by Logan Weekes</strong><br>
 </div>
 <br>
@@ -10,11 +10,9 @@ This project is Black Jack game that can be played in the terminal of the user's
 
 ## How to play?
 
-Upon running the Game.js file, the computer will prompt you to input a name of who is playing the game. From there you will be prompted to hit (enter) when you are ready to begin. It will then log your intitial starting balance (500) and ask you to place an initial bet. From there you and the deal will be dealt two cards each. You will be prompted whether you want to hit or stand while your hand value is less than 21. If you get 21 on your first two cards you get Black Jack! Next the computer will prompt you to hit (enter) when you are ready to view the dealers play. From there the computer calculates who wins the round and allocates funds accordingly. After the computer will update you with your current balance and ask the user whether they would like to play again or not, carrying their funds over from previous rounds.
+Upon running the Game.js file, the computer will prompt you to input the name of who is playing the game. From there you will be prompted to hit (enter) when you are ready to begin. You have an initial starting balance of $500. The computer will then ask you to place an initial bet. From there you and the dealer will be dealt two cards each. You will be prompted whether you want to hit or stand while your hand value is less than 21. If you get 21 on your first two cards you get Black Jack! Next the computer will prompt you to hit (enter) when you are ready to view the dealers play. From there the computer calculates who wins the round and allocates funds accordingly. After the computer will update you with your current balance and ask the user whether they would like to play again or not, carrying their funds over from previous rounds.
 
 ## Demonstration 
 
-<video controls>
-  <source src = "./visuals/example.mov" type = "video/mp4">
-  Problem Displaying.
-</video>
+https://user-images.githubusercontent.com/45779136/172062289-dc055c61-4f25-4738-afcb-dade1599c0a3.mp4
+
