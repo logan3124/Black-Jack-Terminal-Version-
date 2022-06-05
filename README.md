@@ -14,4 +14,5 @@ Upon running the Game.js file, the computer will prompt you to input a name of w
 
 ## Demonstration 
 
-./visuals/demonstration.mp4
+https://user-images.githubusercontent.com/45779136/172062289-dc055c61-4f25-4738-afcb-dade1599c0a3.mp4
+
