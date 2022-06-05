@@ -14,7 +14,4 @@ Upon running the Game.js file, the computer will prompt you to input a name of w
 
 ## Demonstration 
 
-<video controls>
-  <source src = "./visuals/example.mov" type = "video/mp4">
-  Problem Displaying.
-</video>
+./visuals/demonstration.mp4
