@@ -1,5 +1,11 @@
 {
   "dependencies": {
     "prompt-sync": "^4.2.0"
+  },
+  "devDependencies": {
+    "mocha": "^10.0.0"
+  },
+  "scripts": {
+    "test": "mocha"
   }
 }
